@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/claro.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="menuscript.js"></script>
+</head>
+
+<body class="claro">
+	<div class="wrapper">
+		<!-- .header-->
+		<div class="header">
+			<!-- Logo -->
+			<center><a href='index.html'><IMG SRC="LogoPlaintech.png" width="30%" height="30%"></a></center>
+		
+			<!-- Menu -->
+			<div id='cssmenu'>
+				<ul>
+				<li><a href='index.html'>Home</a></li>
+				<li><a href='products.html'>Products</a></li>
+				<li><a href='login.html'>Login</a></li>
+				<li><a href='contact.html'>Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	
+		<!-- .content -->
+		<div class="content">
+ 
+ <button id="regbutton1" dojoType="dijit.form.Button" type="button">
+ Register
+ <script type="dojo/method" event="onClick" args="evt">
+ dijit.byId("regform").show();
+ </script>
+ </button>
+ 
+ <div id="regform" dojoType="dijit.Dialog" title="Registration Form">
+ 
+ <h2><center>Registration Form</center></h2>
+ 
+<button id="previous" onClick="dijit.byId('stackContainer').back()" dojoType="dijit.form.Button">
+ &lt;
+ </button>
+ <span dojoType="dijit.layout.StackController" containerId="stackContainer">
+ </span>
+ <button id="next" onClick="dijit.byId('stackContainer').forward()" dojoType="dijit.form.Button" >
+ &gt;
+ </button>
+ 
+ <div dojoType="dijit.layout.StackContainer" id="stackContainer" style="height:400px">
+ <form>
+ <h5>
+ 
+ <div dojoType="dijit.layout.ContentPane" title="Step 1">
+ <label>Username:
+ <input type="text" dojotype="dijit.form.TextBox" name="username" id="uname" />
+ </label>
+ <br /><br />
+ <label>Password:
+ <input type="password" dojotype="dijit.form.TextBox" name="pwd" id="pass1" />
+ </label>
+ <br /><br />
+ <label>Re-Enter Password:
+ <input type="password" dojotype="dijit.form.TextBox" name="repwd" id="pass2" />
+ </label>
+ <br /><br />
+ 
+ </div>
+ 
+ <!-- <div dojoType="dojox.form.PasswordValidator" name="password">
+ <label>
+ Password:
+ <input type="password" pwType="new" />
+ </label>
+ <br /><br />
+ <label>
+ Validate:
+ <input type="password" pwType="verify" />
+ </label>
+ <br>
+ </div> -->
+ 
+<div dojoType="dijit.layout.ContentPane" title="Step 2">
+ <label> First Name:
+ <input type="text" name="fullname" dojotype="dijit.form.TextBox" id="fname"/>
+ </label>
+ <br /><br />
+ <label> Last Name:
+ <input type="text" name="lastname" dojotype="dijit.form.TextBox" id="lname"/>
+ </label>
+ <br /><br />
+ <div id="gender">
+ Gender:
+ <input type="radio" dojotype="dijit.form.RadioButton" name="gender" id="rbmale" />
+ <label for="rbmale"> Male </label>
+ <input type="radio" dojotype="dijit.form.RadioButton" name="gender" id="rbfemale" />
+ <label for="rbfemale"> Female </label>
+ </div>
+ <br />
+ <label>Date of Birth:
+ <input type="text" name="date1" id="dob" value="1970-01-01" dojoType="dijit.form.DateTextBox" required="true" />
+ </label>
+ <br /><br />
+ 
+</div>
+ 
+<div dojoType="dijit.layout.ContentPane" title="Step 3">
+ 
+<input id="q22" type="text" name="phone" value=""
+dojoType="dijit.form.ValidationTextBox"
+regExp="^[a-zA-Z0-9/.]+@[a-z]+.[a-z]{2,4}$"
+required="true"
+invalidMessage="Please enter correct email address."
+>
+ Email id
+ <br /><br />
+ <label>Web link:
+ <input type="text" name="weblink" value="http://" dojotype="dijit.form.TextBox" id="wlink" />
+ </label>
+ <br /><br />
+ <label>Facebook:
+ <input type="text" name="facebook" value="optional" dojotype="dijit.form.TextBox" id="fbook" />
+ </label>
+ <br /><br />
+ <label>Twitter:
+ <input type="text" name="twitter" value="optional" dojotype="dijit.form.TextBox" id="twtr" />
+ </label>
+ <br /><br />
+ <label>Linked in:
+ <input type="text" name="linked in" value="optional" dojotype="dijit.form.TextBox" id="lnkdin" />
+ </label>
+ <br /><br />
+</div>
+ 
+<div dojoType="dijit.layout.ContentPane" title="Step 4">
+ <Label> Description:
+ <textarea id="descript" name="description" dojoType="dijit.form.SimpleTextarea" rows="4" cols="50" style="width:auto;">
+ </textarea>
+ </label>
+ <br /><br />
+ <label>Photograph:
+ <button id="ubutton1" dojotype="dijit.form.Button">Upload</button>
+ </label>
+ <br /><br />
+ <label>Scanned copy of ID proof:
+ <button id="ubutton2" dojotype="dijit.form.Button">Upload</button>
+ </label>
+ <br /><br />
+ 
+ <label>Address for communication:</label>
+ <br /><br />
+ <label>Street:
+ <input type="text" dojotype="dijit.form.TextBox" name="street" id="st" /><br /><br />
+ </label>
+ <label>Area:
+ <input type="text" dojotype="dijit.form.TextBox" name="area" id="ar" /><br /><br />
+ </label>
+ <label>City:
+ <input type="text" dojotype="dijit.form.TextBox" name="city" id="ct" /><br /><br />
+ </label>
+ <label>State:
+ <input type="text" dojotype="dijit.form.TextBox" name="state" id="sta" /><br /><br />
+ </label>
+ <label>Country:
+ <input type="text" dojotype="dijit.form.TextBox" name="country" value="India" id="ctry" disabled="disabled" /><br /><br />
+ </label>
+ <!--<label>Zipcode:
+ <input type="text" dojoType="dijit.form.NumberTextBox" name="zipcode" id="zip" constraints="{min:000000, max:999999, places:0}"
+ required="true" invalidMessage="Invalid zipcode.">
+ </label>
+-->
+ <input type="text" name="zip" dojoType="dijit.form.ValidationTextBox"
+ regExp="\d{6}" required="true" invalidMessage="Invalid zip code.">
+ <label for="zip">
+ Also 6-Digit India. Zipcode only
+ </label>
+ <br /><br />
+ 
+</div>
+ 
+<div dojoType="dijit.layout.ContentPane" title="Step 5">
+ <label>Educational Qualification:
+ <input type="text" dojotype="dijit.form.TextBox" name="qual1" id="ql1" /><br /><br />
+ <input type="text" dojotype="dijit.form.TextBox" name="qual2" id="ql2" /><br /><br />
+ <input type="text" dojotype="dijit.form.TextBox" name="qual3" id="ql3" /><br /><br />
+ </label>
+ <label>Skills: <input type="text" dojotype="dijit.form.TextBox" name="skills" id="skill" placeHolder="(example: PHP, Python, Perl, etc.,)" size="50" />
+ </label>
+ <br /><br />
+ 
+ <!-- <label>Experience: <input type="text" dojotype="dijit.form.NumberTextBox" name="experience" id="exp" size="2" maxlength="2" /> years
+ </label>-->
+ 
+ Experience<div id="spinnerId">
+</div>
+ 
+ <br /><br />
+ <label>References: <input type="text" dojotype="dijit.form.TextBox" name="reference1" value="Reference 1" id="ref1" />
+ </label>
+ <br /><br />
+ <input type="text" dojotype="dijit.form.TextBox" name="reference2" value="Reference 2" id="ref2" /><br /><br />
+ <input type="text" dojotype="dijit.form.TextBox" name="reference3" value="Reference 3" id="ref3" /><br /><br />
+ <br />
+ <fieldset>
+ <legend>Training History:</legend>
+ <label>Client: <input type="text" dojotype="dijit.form.TextBox" name="th client" size="20" /></label><br /><br />
+ <label>Vendor: <input type="text" dojotype="dijit.form.TextBox" name="th vendor" size="20" /></label><br /><br />
+ <label>Topic: <input type="text" dojotype="dijit.form.TextBox" name="th topic" size="25" /></label><br /><br />
+ <label>Reference: <input type="text" dojotype="dijit.form.TextBox" name="th ref" size="15" /></label><br /><br />
+ </fieldset>
+ <br /><br />
+ <label>Sample Video:
+ <button id="vupload" dojotype="dijit.form.Button" />Upload</button>
+ </label>
+ <br /><br />
+</div>
+ 
+<div dojoType="dijit.layout.ContentPane" title="Step 6">
+ 
+ <label>Terms and Conditions:
+ <textarea id="tc" name="terms" dojoType="dijit.form.SimpleTextarea" rows="4" cols="50" style="width:auto;">
+ </textarea>
+ </label>
+ <br /><br />
+ <input id="mycheck" name="mycheck" dojoType="dijit.form.CheckBox" value="agreed" checked="false" onChange="alert('onChange called with parameter = ' + arguments[0] + ',
+ and widget value = ' + dijit.byId('mycheck').attr('value'))" />
+ <label for="mycheck">I agree to the terms and conditions
+ </label>
+ <br /><br />
+</div>
+ </h5>
+ 
+ <!-- <h4>
+ <button id="clrbutton" dojotype="dijit.form.Button" type="button" />
+ Clear
+ </button>
+ <button id="regbutton1" dojoType="dijit.form.Button" type="button">
+ Step 2
+ </button>
+ </h4> -->
+ </form>
+</div>
+ 
+ </div>
+ 
+
+		</div>
+		<!-- .footer -->
+		<div class="footer">
+			<div class="footertekst">&copy; Plaintech - ITopia 2014</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
