@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,16 +22,27 @@
 		<!-- .header-->
 		<div class="header">
 			<!-- Logo -->
-			<center><a href='index.html'><IMG SRC="LogoPlaintech.png" width="30%" height="30%"></a></center>
+			<center><a href='index.jsp'><IMG SRC="LogoPlaintech.png" width="30%"></a></center>
 		
 			<!-- Menu -->
 			<div id='cssmenu'>
 				<ul>
-				<li class='active'><a href='index.html'>Home</a></li>
-				<li><a href='products.html'>Products</a></li>
-				<li><a href='login.html'>Login</a></li>
-				<li><a href='contact.html'>Contact</a></li>
-				</ul>
+				<li class='active'><a href='index.jsp'>Home</a></li>
+				<li><a href='products.jsp'>Products</a></li>
+				<li><a href='contact.jsp'>Contact</a></li>
+				<li><a href="MyAccount.jsp">Profile</a></li> 
+				<% 
+                	String username= (String) session.getAttribute("user");                     
+                	if (username == null) {
+				%> 
+				
+				<li><a href="login.jsp">Login</a></li>  
+				<li><a href="register.jsp">Register</a></li>  
+								
+				<% } else { %>
+					<li><a href="logout.jsp">Logout</a></li>  
+				<% }  %>
+				</ul>				
 			</div>
 		</div>
 	
@@ -44,7 +58,7 @@
 				</br></br>
 				
 				<center>
-				<a href="products.html" class="productsbutton">See our products</a>
+				<a href="products.jsp" class="productsbutton">See our products</a>
 				</center>
 				</br></br>
 			</div>

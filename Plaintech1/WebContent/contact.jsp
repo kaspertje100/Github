@@ -17,16 +17,29 @@
 		<!-- .header-->
 		<div class="header">
 			<!-- Logo -->
-			<center><a href='index.html'><IMG SRC="LogoPlaintech.png" width="30%" height="30%"></a></center>
+			<center>
+			<a href='index.jsp'><IMG SRC="LogoPlaintech.png" width="30%"></a>
+			</center>
 		
 			<!-- Menu -->
 			<div id='cssmenu'>
 				<ul>
-				<li><a href='index.html'>Home</a></li>
-				<li><a href='products.html'>Products</a></li>
-				<li><a href='login.html'>Login</a></li>
-				<li class='active'><a href='contact.html'>Contact</a></li>
-				</ul>
+				<li><a href='index.jsp'>Home</a></li>
+				<li><a href='products.jsp'>Products</a></li>
+				<li class='active'><a href='contact.jsp'>Contact</a></li>
+				<li><a href="MyAccount.jsp">Profile</a></li> 
+				<% 
+                	String username= (String) session.getAttribute("user");                     
+                	if (username == null) {
+				%> 
+				
+				<li><a href="login.jsp">Login</a></li>  
+				<li><a href="register.jsp">Register</a></li>  
+								
+				<% } else { %>
+					<li><a href="logout.jsp">Logout</a></li>  
+				<% }  %>
+				</ul>	
 			</div>
 		</div>
 	
